@@ -1,0 +1,43 @@
+// Lab 11.7 Customer Accounts.cpp : Use a structure to store data on customer accounts.
+
+
+#include "pch.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Custom_Account
+{
+	string name;
+	int address;
+	string next_address;
+	int tele_num;
+	double account_bal;
+	string payment_day;
+};
+int main()
+{
+	Custom_Account customer;
+
+	cout << "Please enter the customer's name: ";
+	getline(cin, customer.name);
+	cout << "Then, enter the address digits: ";
+	cin >> customer.address;
+	cout << "Enter the rest of the address: ";
+	getline(cin, customer.next_address);
+	cout << "Now enter the telephone number: ";
+	cin >> customer.tele_num;
+	cout << "Please enter the customer's account balance: ";
+	cin >> customer.account_bal;
+	cout << "Finally, enter the date of the last pay statement: ";
+	getline(cin, customer.payment_day);
+
+	cout << "Here is the customer's information: " << endl;
+	cout << customer.name << endl;
+	cout << customer.address << " " << customer.next_address << endl;
+	cout << "Telephone number: " << customer.tele_num << endl;
+	cout << "Account balance: " << customer.account_bal;
+	cout << "Last Pay Day: " << customer.payment_day;
+
+	return 0;
+}
