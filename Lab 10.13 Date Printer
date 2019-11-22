@@ -1,0 +1,54 @@
+// Lab 10.13 Date Printer.cpp: Read a string that has a date and 
+//prints the date in a different form
+
+#include <iostream>
+#include <string>
+#include <assert.h>
+using namespace std;
+
+void Format_change(int month, string change_month);
+void Format_change(int day, string change_day);
+void Format_change(int year, string change_year);
+
+int main()
+{
+	string input;
+	string change_month;
+	string change_day;
+	string change_year;
+	string Format_change;
+	int month;
+	int day;
+	int year;
+
+	cout << "Please enter a date in the mm/dd/yyyy form: ";
+	getline(cin, input);
+
+	cout << change_month << " " << change_day << " " << change_year << endl;
+
+	return 0;
+}
+
+string Format_change(int month, string change_month)
+{
+	assert("01" == "January");
+	assert("10" == "October");
+	assert("05" == "May");
+	return change_month;
+}
+
+string Format_change(int day, string change_day)
+{
+	assert("01" == " 1st,");
+	assert("10" == " 10th,");
+	assert("21" == " 21st,");
+	return change_day;
+}
+
+string Format_change(int year, string change_year)
+{
+	assert("1980" == " 1980");
+	assert("2000" == " 2000");
+	assert("2018" == " 2018");
+	return change_year;
+}
