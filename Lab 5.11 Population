@@ -1,0 +1,42 @@
+// Lab 5.11 Population.cpp : Write a program that takes a starting number
+//and predicts an organism's population after an amount of days
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	double start_popul;
+	double popul_inc;
+	double percent;
+	int multi_days = 0;
+
+	cout << "Please enter population number for the first day: ";
+	cin >> start_popul;
+	cout << "Please enter average population increase each day as percentage: ";
+	cin >> percent;
+	cout << "Please enter number of days population will multiply: ";
+	cin >> multi_days;
+
+	if (start_popul < 2)
+	{
+		cout << "This is an invalid input. Please enter number greater than 2.";
+		cout << "Enter starting population for first day: ";
+		cin >> start_popul;
+	}
+
+	if (percent < 0)
+	{
+		cout << "This is an invalid input. Please enter a percentage greater than 0.";
+		cout << "Enter average population increase as percentage: ";
+		cin >> percent;
+	}
+	int i = 0;
+	while (i < multi_days)
+	{
+		multi_days = i + 1;
+		start_popul = start_popul + percent;
+
+		cout << "Population size for the day " << start_popul << endl;
+	}
+	return 0;
+}
